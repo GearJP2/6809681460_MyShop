@@ -1,8 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Sofia);
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap');
 
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #faf4e4 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .header-container {
   display: flex;
+  position: sticky;
+  z-index: 1;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   background-color: #111;
@@ -67,7 +78,7 @@
     0 0 5px #ffd700,
     -2px -2px 5px #ff69b4,
     2px 2px 8px #00ffff;
-    font-size: 100px;
+  font-size: 100px;
 }
 
 .background-text h2 {
@@ -153,7 +164,6 @@
   margin-top: 0;
 }
 
-
 .thai-describe {
   font-family: "Playpen Sans Thai", cursive;
   color: #333;
@@ -174,174 +184,203 @@
 }
 
 .container-shop {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .section-title {
-    text-align: center;
-    margin-bottom: 64px;
-    color: white;
-    font-size: 32px;
+  text-align: center;
+  margin-bottom: 64px;
+  color: white;
+  font-size: 32px;
 }
 
 .albums-title {
-    color: #d3a121;
-    margin-bottom: 80px;
+  color: #d3a121;
+  margin-bottom: 80px;
 }
 
 .albums-section {
-    padding: 96px 24px;
-    background: linear-gradient(135deg, #ffffff 0%, #faf4e4 100%);
+  padding: 96px 24px;
+  padding-bottom: 0px;
+  padding-top: 30px;
+  background: linear-gradient(135deg, #ffffff 0%, #faf4e4 100%);
 }
 
 .albums-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px;
-    margin: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin: 40px;
+  margin-bottom: 0px;
 }
 
 .album-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 24px;
-    background: white;
-    border: 1px solid #cadeef;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid #cadeef;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .album-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
 
-.album-card:hover .album-overlay{
-    background: linear-gradient(to top, rgba(214, 206, 183, 0.8), transparent);
+.album-card:hover .album-overlay {
+  background: linear-gradient(to top, rgba(214, 206, 183, 0.8), transparent);
 }
 
 .album-image {
-    height: 256px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  height: 256px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .album-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, rgba(214, 206, 183, 0), transparent);
-    transition: background 0.5 ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(214, 206, 183, 0), transparent);
+  transition: background 0.5 ease;
 }
 
 .album-overlay:hover {
-    background: linear-gradient(to top, rgba(214, 206, 183, 0.8), transparent);
+  background: linear-gradient(to top, rgba(214, 206, 183, 0.8), transparent);
 }
 
 .album-title-overlay {
-    text-align: center;
-    position: absolute;
-    bottom: 0px;
-    left: 16px;
-    right: 16px;
-    color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 16px;
+  right: 16px;
+  color: white;
 }
 
 .album-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 24px;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  flex-grow: 1;
 }
 
 .album-description {
-    color: #cfb677;
-    font-size: 14px;
-    margin-bottom: 16px;
-    margin-bottom: auto;
+  color: #cfb677;
+  font-size: 14px;
+  margin-bottom: 16px;
+  margin-bottom: auto;
 }
 
 .album-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 16px;
 }
 
 .album-price {
-    display: flex;
-    font-size: 32px;
-    color: #d3a121;
+  display: flex;
+  font-size: 32px;
+  color: #d3a121;
 }
 
 .album-bonus {
-    padding: 0;
-    font-size: 12px;
-    color: #d3c7aa;
+  padding: 0;
+  font-size: 12px;
+  color: #d3c7aa;
 }
 
 .album-tracklist {
-    font-size: 12px;
-    color: #9bd4e4;
-    line-height: 1.5;
+  font-size: 12px;
+  color: #9bd4e4;
+  line-height: 1.5;
 }
 
 .album-tracklist li {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
+}
+
+.category-flex {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin: 80px;
+}
+
+.category-button {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  color: #111;
+  background-color: #faf4e4;
+  padding: 10px 20px;
+  border: 1px solid #111;
+  border-radius: 70px;
+  transition: 0.25s ease-in-out;
+  text-decoration: none;
+}
+
+.category-button:hover {
+  background-color: #111;
+  color: #faf4e4;
+  transform: scale(1.05);
 }
 
 .footer-container {
-    background-color: #111;
-    color: #DEB887;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  background-color: #111;
+  color: #DEB887;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .social-media a {
-    color: #DEB887;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s;
+  color: #DEB887;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
 }
 
 .social-media a:hover {
-    color: bisque;
+  color: bisque;
 }
 
 .back-to-top a {
-    color: #DEB887;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-size: 14px;
-    border: 1px solid #DEB887;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+  color: #DEB887;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  border: 1px solid #DEB887;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .back-to-top a:hover {
-    background-color: #DEB887;
-    color: #111;
+  background-color: #DEB887;
+  color: #111;
 }
 
 .copyright p {
-    margin: 20px;
-    font-size: 14px;
-    font-family: sans-serif;
+  margin: 20px;
+  font-size: 14px;
+  font-family: sans-serif;
 }
 
 hr {
